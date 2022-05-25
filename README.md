@@ -5,3 +5,6 @@ Original Implementation of Fair Classification via Transformer Neural Networks: 
 
 # License
 See the LICENSE file for more details.
+
+
+# Citation
