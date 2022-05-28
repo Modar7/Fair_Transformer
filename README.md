@@ -5,8 +5,7 @@ Original Implementation of the paper: [Fair Classification via Transformer Neura
 
 
 # Usage
-* I order to reproduce the results, please install the required packages using the following command: 
-                               conda env create -f environment.yml
+* I order to reproduce the results, please install the required packages using the following command: `conda env create -f environment.yml`
 
 # Running experiments
 
