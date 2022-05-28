@@ -19,5 +19,5 @@ Licensed under the [MIT License](License).
 
 * `trainer.py` for training the model withput any fairness constraint in the main objective function.
 
-*  In each of the previous trainers (`fair_trainer.py` and `trainer.py`) you can choose one of the follwoing transformer-based models for training: Tab-Transformer, FT-Transformer, SAINT and [Perceiver](https://arxiv.org/abs/2103.03206).
+*  In each of the previous trainers (`fair_trainer.py` and `trainer.py`) you can choose one of the follwoing transformer-based models for training: [Tab-Transformer](https://arxiv.org/abs/2012.06678), [FT-Transformer](https://arxiv.org/pdf/2106.11959.pdf), [SAINT](https://arxiv.org/abs/2106.01342) and [Perceiver](https://arxiv.org/abs/2103.03206).
 
