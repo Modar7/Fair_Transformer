@@ -9,4 +9,9 @@ Original Implementation of the paper: [Fair Classification via Transformer Neura
 Licensed under the [MIT License](License).
 
 
-# Citation
+# Reproduce results:
+I onrder to reproduce the results, please run the following:
+
+
+
+* First install the required packages from a venv using the following command: conda env create -f venv.yml
