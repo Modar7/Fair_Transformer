@@ -6,8 +6,8 @@ Author: Modar Sulaiman, Kallol Roy
 
 
 
-# License
-See the LICENSE file for more details.
+# License & copyright
+Licensed under the [MIT License](License).
 
 
 # Citation
