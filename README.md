@@ -9,9 +9,13 @@ Original Implementation of the paper: [Fair Classification via Transformer Neura
 Licensed under the [MIT License](License).
 
 
-# Reproduce results:
-I onrder to reproduce the results, please run the following:
+# Usage
+I onrder to reproduce the results, please install the required packages using the following command: conda env create -f environment.yml
+
+# Running experiments
+
+* You can train a transfomer model with the fairness constraint in the main objective function (for avoiding the disparate treatment) using the following: python fair_trainer.py
+
+* You can train transfomer model without any fairness constraint in the main objective function using the following: python fair_trainer.py
 
 
-
-* First install the required packages from a venv using the following command: conda env create -f venv.yml
