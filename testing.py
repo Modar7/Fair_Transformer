@@ -1,7 +1,3 @@
-
-
-
-
 import torch
 import pandas as pd
 import pickle
@@ -13,7 +9,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import f1_score
 from src.training import Trainer_fair  # Fair Training Class
 
-with open("tab_preproc_Tab_Fair_model_LAW2.pkl", "rb") as tp:
+with open("tab_preproc_Tab_Fair_model_.pkl", "rb") as tp:
     tab_preprocessor_new = pickle.load(tp)
 
 
@@ -39,7 +35,7 @@ model_tesing = TabModel(deeptabular=tab_transformer)
 
 
 # Load the fair trained model
-model_tesing.load_state_dict(torch.load("Fair_Tab_model_state_dict_saved.pt"))
+model_tesing.load_state_dict(torch.load("Saved_Models/Tab_Fair_model_state_dict_saved"))
 
 trainer = Trainer_fair(model_tesing, objective="binary", metrics=metrics, tab_preprocessor=tab_preprocessor_new)
 preds = trainer.predict(X_tab=X_tab_test)
