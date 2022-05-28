@@ -10,9 +10,9 @@ Licensed under the [MIT License](License).
 
 
 # Usage
-I onrder to reproduce the results, please install the required packages using the following command: 
+* I order to reproduce the results, please install the required packages using the following command: 
 
-conda env create -f environment.yml
+                        conda env create -f environment.yml
 
 # Running experiments
 
