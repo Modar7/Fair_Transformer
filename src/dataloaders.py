@@ -2,15 +2,15 @@ import numpy as np
 from torch.utils.data import DataLoader, WeightedRandomSampler
 
 from src.wdtypes import *  # noqa: F403
-from src.training._wd_dataset import WideDeepDataset
+from src.training._wd_dataset import DatasetObject
 
 
-def get_class_weights(dataset: WideDeepDataset) -> Tuple[np.ndarray, int, int]:
+def get_class_weights(dataset: DatasetObject) -> Tuple[np.ndarray, int, int]:
     """Helper function to get weights of classes in the imbalanced dataset.
 
     Parameters
     ----------
-    dataset: ``WideDeepDataset``
+    dataset: ``DatasetObject``
         dataset containing target classes in dataset.Y
 
     Returns
@@ -40,7 +40,7 @@ class DataLoaderImbalanced(DataLoader):
 
     Parameters
     ----------
-    dataset: ``WideDeepDataset``
+    dataset: ``DatasetObject``
         see ``src.training._wd_dataset``
     batch_size: int
         size of batch
@@ -49,7 +49,7 @@ class DataLoaderImbalanced(DataLoader):
     """
 
     def __init__(
-        self, dataset: WideDeepDataset, batch_size: int, num_workers: int, **kwargs
+        self, dataset: DatasetObject, batch_size: int, num_workers: int, **kwargs
     ):
         if "oversample_mul" in kwargs:
             oversample_mul = kwargs["oversample_mul"]
