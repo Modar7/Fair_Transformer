@@ -16,7 +16,7 @@ Licensed under the [MIT License](License).
 
 # Running experiments
 
-* 'fair_trainer.py' for training the model with the fairness constraint in the main objective function (for avoiding the disparate treatment).
+* `fair_trainer.py` for training the model with the fairness constraint in the main objective function (for avoiding the disparate treatment).
 
 * You can train transfomer model without any fairness constraint in the main objective function using the following: python fair_trainer.py
 
