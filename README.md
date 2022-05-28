@@ -1,7 +1,8 @@
 # Fair Classification via Transformer Neural Networks: Case Study of an Educational Domain.
 
 
-Original Implementation of the paper: [Fair Classification via Transformer Neural Networks: Case Study of an Educational Domain] by Modar Sulaiman, Kallol Roy.
+Original Implementation of the paper `to appear soon`.: [Fair Classification via Transformer Neural Networks: Case Study of an Educational Domain] by Modar Sulaiman, Kallol Roy.
+
 
 
 
