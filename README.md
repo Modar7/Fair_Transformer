@@ -4,6 +4,8 @@ Original Implementation of the paper:[Fair Classification via Transformer Neural
 
 Author: Modar Sulaiman, Kallol Roy
 
+22
+
 
 # License
 See the LICENSE file for more details.
