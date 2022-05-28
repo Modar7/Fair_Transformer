@@ -60,7 +60,7 @@ trainer.fit(X_tab=X_tab, target=target, n_epochs=10, batch_size=256, val_split=N
 torch.save(model, "Saved_Models/Fair_Tab_model_saved.pt")
 torch.save(model.state_dict(), "Saved_Models/Tab_Fair_model_state_dict_saved.pt")
 # Save the preprocessor
-with open("tab_preproc_Tab_Fair_model_LAW2.pkl", "wb") as dp:
+with open("tab_preproc_Tab_Fair_model_.pkl", "wb") as dp:
     pickle.dump(tab_preprocessor, dp)
 
 
