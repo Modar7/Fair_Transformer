@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 from src.wdtypes import *  # noqa: F403
-from src.utils.deeptabular_utils import LabelEncoder
+from src.utils.tabular_utils import LabelEncoder
 from src.preprocessing.base_preprocessor import (
     BasePreprocessor,
     check_is_fitted,
