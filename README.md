@@ -12,7 +12,7 @@ Original Implementation of the paper `to appear soon`: [Fair Classification via 
 
 * `fair_trainer.py` for training the model with fairness constraint (avoiding the disparate treatment) in the main objective function.
 
-* `trainer.py` for training the model withput any fairness constraint in the main objective function.
+* `trainer.py` for training the model without any fairness constraint in the main objective function.
 
 *  In each of the previous trainers (`fair_trainer.py` and `trainer.py`) you can choose one of the follwoing transformer-based models for training: [Tab-Transformer](https://arxiv.org/abs/2012.06678), [FT-Transformer](https://arxiv.org/pdf/2106.11959.pdf), [SAINT](https://arxiv.org/abs/2106.01342) and [Perceiver](https://arxiv.org/abs/2103.03206).
 
