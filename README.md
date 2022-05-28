@@ -10,8 +10,8 @@ Original Implementation of the paper: [Fair Classification via Transformer Neura
 # Running experiments
 
 * `fair_trainer.py` for training the model with fairness constraint (avoiding the disparate treatment) in the main objective function based on the following two references:
-   ** Fairness Constraints: A Flexible Approach for Fair Classification
-   ** A Reductions Approach to Fair Classification
+   * Fairness Constraints: A Flexible Approach for Fair Classification
+   * A Reductions Approach to Fair Classification
 
 * `trainer.py` for training the model without any fairness constraint in the main objective function.
 
