@@ -9,6 +9,8 @@ from src.libs.Datasets import LSAC_dataset
 from src.preprocessing import TabPreprocessor
 from src.models import TabTransformer, TabModel
 from src.metrics import Accuracy, Recall, F1Score
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import f1_score
 from src.training import Trainer_fair  # Fair Training Class
 
 with open("tab_preproc_Tab_Fair_model_LAW2.pkl", "rb") as tp:
@@ -34,6 +36,11 @@ tab_transformer = TabTransformer(column_idx=tab_preprocessor_new.column_idx,
                                 )
 
 model_tesing = TabModel(deeptabular=tab_transformer)
+
+
+# Load the fair trained model
+model_tesing.load_state_dict(torch.load("Fair_Tab_model_state_dict_saved.pt"))
+
 trainer = Trainer_fair(model_tesing, objective="binary", metrics=metrics, tab_preprocessor=tab_preprocessor_new)
 preds = trainer.predict(X_tab=X_tab_test)
 print('Accuracy Score:', accuracy_score(target_test, preds))
