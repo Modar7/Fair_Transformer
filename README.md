@@ -16,8 +16,9 @@ Licensed under the [MIT License](License).
 
 # Running experiments
 
-* `fair_trainer.py` for training the model with the fairness constraint in the main objective function (for avoiding the disparate treatment).
+* `fair_trainer.py` for training the model with the fairness constraint (avoiding the disparate treatment) in the main objective function.
 
-* You can train transfomer model without any fairness constraint in the main objective function using the following: python fair_trainer.py
+* `trainer.py` for training the model withput any fairness constraint in the main objective function.
 
+*  Yuo can train one of the follwoing transformer-based models: Tab-Transformer, FT-Transformer, SAINT and [Perceiver](https://arxiv.org/abs/2103.03206).
 
