@@ -12,44 +12,6 @@ __all__ = ["LabelEncoder"]
 
 
 class LabelEncoder:
-    r"""Label Encode categorical values for multiple columns at once
-
-    .. note:: LabelEncoder reserves 0 for `unseen` new categories. This is convenient
-        when defining the embedding layers, since we can just set padding idx to 0.
-
-    Parameters
-    ----------
-    columns_to_encode: list, Optional, default = None
-        List of strings containing the names of the columns to encode. If
-        ``None`` all columns of type ``object`` in the dataframe will be label
-        encoded.
-    for_transformer: bool, default = False
-        Boolean indicating whether the preprocessed data will be passed to a
-        transformer-based model.
-        See :obj:`pytorch_widedeep.models.transformers`
-    shared_embed: bool, default = False
-        Boolean indicating if the embeddings will be "shared" when using
-        transformer-based models. The idea behind ``shared_embed`` is
-        described in the Appendix A in the `TabTransformer paper
-        <https://arxiv.org/abs/2012.06678>`_: `'The goal of having column
-        embedding is to enable the model to distinguish the classes in one
-        column from those in the other columns'`. In other words, the idea is
-        to let the model learn which column is embedded at the time. See:
-        :obj:`pytorch_widedeep.models.transformers._layers.SharedEmbeddings`.
-
-    Attributes
-    -----------
-    encoding_dict: Dict
-        Dictionary containing the encoding mappings in the format, e.g.
-
-        `{'colname1': {'cat1': 1, 'cat2': 2, ...}, 'colname2': {'cat1': 1, 'cat2': 2, ...}, ...}`
-
-    inverse_encoding_dict: Dict
-        Dictionary containing the insverse encoding mappings in the format, e.g.
-
-        `{'colname1': {1: 'cat1', 2: 'cat2', ...}, 'colname2': {1: 'cat1', 2: 'cat2', ...}, ...}`
-    """
-
     def __init__(
         self,
         columns_to_encode: Optional[List[str]] = None,
@@ -125,44 +87,9 @@ class LabelEncoder:
         return df_inp
 
     def fit_transform(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Combines ``fit`` and ``transform``
-
-        Examples
-        --------
-
-        >>> import pandas as pd
-        >>> from pytorch_widedeep.utils import LabelEncoder
-        >>> df = pd.DataFrame({'col1': [1,2,3], 'col2': ['me', 'you', 'him']})
-        >>> columns_to_encode = ['col2']
-        >>> encoder = LabelEncoder(columns_to_encode)
-        >>> encoder.fit_transform(df)
-           col1  col2
-        0     1     1
-        1     2     2
-        2     3     3
-        >>> encoder.encoding_dict
-        {'col2': {'me': 1, 'you': 2, 'him': 3}}
-        """
         return self.fit(df).transform(df)
 
     def inverse_transform(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Returns the original categories
-
-        Examples
-        --------
-
-        >>> import pandas as pd
-        >>> from pytorch_widedeep.utils import LabelEncoder
-        >>> df = pd.DataFrame({'col1': [1,2,3], 'col2': ['me', 'you', 'him']})
-        >>> columns_to_encode = ['col2']
-        >>> encoder = LabelEncoder(columns_to_encode)
-        >>> df_enc = encoder.fit_transform(df)
-        >>> encoder.inverse_transform(df_enc)
-           col1 col2
-        0     1   me
-        1     2  you
-        2     3  him
-        """
         for k, v in self.inverse_encoding_dict.items():
             df[k] = df[k].apply(lambda x: v[x])
         return df
